@@ -1,0 +1,9 @@
+[Unit]
+Description=Sync Bursley Dining menu to GitHub
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/absolute/path/to/bursley-menu
+ExecStart=/absolute/path/to/bursley-menu/sync_menu.sh

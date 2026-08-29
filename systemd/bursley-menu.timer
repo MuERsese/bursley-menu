@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Bursley menu sync hourly during dining hours
+
+[Timer]
+OnCalendar=*-*-* 07..20:05:00
+Persistent=true
+RandomizedDelaySec=120
+
+[Install]
+WantedBy=timers.target

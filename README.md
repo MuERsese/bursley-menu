@@ -1,16 +1,41 @@
-# Bursley Menu Data
+# Bursley Menu Scraper
 
-A lightweight, machine-readable snapshot of the current **University of Michigan Bursley Dining Hall** menu, including dining stations, dietary tags, and per-item nutrition information when available.
+A small scraper and data mirror for the **University of Michigan Bursley Dining Hall** menu.
 
-The data is collected from the official Michigan Dining Bursley menu page and published to [`menu.json`](./menu.json) for easy use by scripts, assistants, dashboards, or other personal tools.
+It uses Playwright/Chromium to read the official Michigan Dining page, classifies dishes by Bursley station, extracts per-item Nutrition Facts and allergens when available, writes the result to [`menu.json`](./menu.json), and can automatically commit/push refreshed data back to this repository.
 
-> **Official source:** https://dining.umich.edu/menus-locations/dining-halls/bursley/
+> Official source: https://dining.umich.edu/menus-locations/dining-halls/bursley/
 >
-> Menu offerings can change. Michigan Dining notes that in-hall signage is the most up-to-date source.
+> Michigan Dining notes that menu offerings can change and in-hall signage is the most up-to-date source.
+
+## Repository layout
+
+```text
+.
+├── README.md
+├── fetch_bursley.py
+├── install.sh
+├── menu.json
+├── requirements.txt
+├── sync_menu.sh
+└── systemd/
+    ├── bursley-menu.service.example
+    └── bursley-menu.timer
+```
+
+### Files
+
+- `fetch_bursley.py` — opens the Bursley menu page, parses dishes/stations/tags/Nutrition Facts, and writes `menu.json`.
+- `menu.json` — latest published machine-readable menu snapshot.
+- `sync_menu.sh` — runs the scraper, commits `menu.json`, and pushes the update to the current Git branch.
+- `install.sh` — installs Python/Playwright/Chromium dependencies and installs the user-level systemd service/timer.
+- `requirements.txt` — Python dependency list.
+- `systemd/bursley-menu.timer` — automatic refresh schedule.
+- `systemd/bursley-menu.service.example` — example service definition; `install.sh` generates a service with the clone's real absolute path.
 
 ## Raw JSON endpoint
 
-Use the latest published menu directly:
+The latest data can be consumed directly from:
 
 ```text
 https://raw.githubusercontent.com/MuERsese/bursley-menu/main/menu.json
@@ -34,38 +59,30 @@ print(menu["captured_at"])
 print(menu["meals"].get("Dinner", {}))
 ```
 
-## What is included
+## What is captured
 
-`menu.json` currently contains:
+`menu.json` includes, when exposed by Michigan Dining:
 
-- Source URL and capture timestamp
-- Breakfast / Brunch / Lunch / Dinner sections when offered
-- Bursley dining-station assignment
-- Dish name
-- Dietary and sustainability tags such as:
-  - Gluten Free
-  - Halal
-  - Vegetarian / Vegan
-  - Nutrient Dense
-  - Carbon Footprint
-- Nutrition Facts when available:
-  - Serving size
-  - Calories
-  - Total fat / saturated fat / trans fat
-  - Cholesterol
-  - Sodium
-  - Total carbohydrate
-  - Dietary fiber
-  - Sugars
-  - Protein
-- Common allergen information extracted from the item detail panel
-- Raw Nutrition Facts text for auditing/debugging
+- capture timestamp in the `America/Detroit` timezone
+- Breakfast / Brunch / Lunch / Dinner sections
+- Bursley station assignment
+- dish name
+- dietary and sustainability tags
+- serving size
+- calories
+- total / saturated / trans fat
+- cholesterol
+- sodium
+- carbohydrates
+- dietary fiber
+- sugars
+- protein
+- common allergens
+- raw Nutrition Facts text for debugging/auditing
 
-Nutrition values are approximations supplied by Michigan Dining and may change because of recipe substitutions, product formulation, or portion size.
+The file also includes a `_debug` section with parser counts and station-assignment metadata.
 
 ## Bursley stations
-
-Bursley describes itself as eight mini-restaurants:
 
 | Station | Focus |
 | --- | --- |
@@ -78,80 +95,131 @@ Bursley describes itself as eight mini-restaurants:
 | `Deli` | Made-to-order sandwiches |
 | `Finale` | Desserts |
 
-## JSON structure
+## Setup on Ubuntu/Linux
 
-A simplified item looks like this:
+Clone the repository:
+
+```bash
+git clone https://github.com/MuERsese/bursley-menu.git
+cd bursley-menu
+```
+
+Install dependencies:
+
+```bash
+chmod +x install.sh sync_menu.sh fetch_bursley.py
+./install.sh
+```
+
+`install.sh` installs:
+
+- `python3-venv`
+- `git`
+- GitHub CLI (`gh`)
+- Playwright
+- Chromium and its required system dependencies
+
+Authenticate GitHub so automatic pushes can work:
+
+```bash
+gh auth login
+```
+
+Choose GitHub.com and authenticate the clone/remote in the way you normally use Git.
+
+## Run manually
+
+Run only the scraper:
+
+```bash
+.venv/bin/python fetch_bursley.py
+```
+
+This updates:
+
+```text
+menu.json
+```
+
+Run the complete scrape + commit + push flow:
+
+```bash
+./sync_menu.sh
+```
+
+## Automatic updates with systemd
+
+`install.sh` installs a user service and timer under:
+
+```text
+~/.config/systemd/user/
+```
+
+Enable the timer:
+
+```bash
+systemctl --user enable --now bursley-menu.timer
+```
+
+The supplied timer runs hourly at approximately `:05`, from 07:00 through 20:00, with up to 120 seconds of randomized delay.
+
+Check the timer:
+
+```bash
+systemctl --user list-timers bursley-menu.timer
+```
+
+Check the service:
+
+```bash
+systemctl --user status bursley-menu.service
+```
+
+View recent logs:
+
+```bash
+journalctl --user -u bursley-menu.service -n 100 --no-pager
+```
+
+To allow the user timer to continue running after logout, if desired:
+
+```bash
+sudo loginctl enable-linger "$USER"
+```
+
+## JSON example
+
+A simplified item looks like:
 
 ```json
 {
-  "source": "https://dining.umich.edu/menus-locations/dining-halls/bursley/",
-  "captured_at": "2026-08-29T17:02:35.323055-04:00",
-  "meals": {
-    "Dinner": {
-      "Signature": [
-        {
-          "name": "Piri-Piri Chicken",
-          "tags": [
-            "Gluten Free",
-            "Halal",
-            "Nutrient Dense High",
-            "Carbon Footprint Medium"
-          ],
-          "nutrition": {
-            "serving_size": "3 oz Piece (92g)",
-            "calories": 160,
-            "total_fat_g": 11,
-            "sodium_mg": 218,
-            "total_carbohydrate_g": 2,
-            "protein_g": 15,
-            "allergens": ["Milk"]
-          }
-        }
-      ]
-    }
+  "name": "Piri-Piri Chicken",
+  "tags": [
+    "Gluten Free",
+    "Halal",
+    "Nutrient Dense High",
+    "Carbon Footprint Medium"
+  ],
+  "nutrition": {
+    "serving_size": "3 oz Piece (92g)",
+    "calories": 160,
+    "total_fat_g": 11,
+    "sodium_mg": 218,
+    "total_carbohydrate_g": 2,
+    "total_sugars_g": 1,
+    "protein_g": 15,
+    "allergens": ["Milk"]
   }
 }
 ```
 
-The real file contains additional nutrition fields and a `_debug` section used to validate parsing and station assignment.
-
-## How the data is produced
-
-The current updater runs separately from this data-only repository:
-
-```text
-Michigan Dining Bursley page
-        ↓
-Playwright-based scraper
-        ↓
-meal + station classification
-        ↓
-Nutrition Facts / allergen parsing
-        ↓
-menu.json
-        ↓
-Git commit + push
-```
-
-The current deployment is scheduled to refresh automatically with a **systemd user timer**. The public repository intentionally keeps the consumer-facing artifact (`menu.json`) small and simple; the scraper/update scripts are currently maintained outside this repository.
-
-The `captured_at` field is written in the `America/Detroit` timezone so consumers can determine how fresh the snapshot is.
-
-## Station assignment notes
-
-The Michigan Dining page does not expose every station in exactly the same DOM structure.
-
-To avoid confidently assigning a dish to the wrong station, the parser uses direct station containers whenever possible and conservative fallbacks otherwise.
-
-- `24 Carrots`, `Halal`, `Pizziti`, and `Deli` are generally mapped from explicit station containers.
-- Some `Signature`, `Wild Fire`, `Two Oceans`, and `Finale` assignments may require position/keyword inference.
-- Breakfast may contain an `Unresolved` group when the page does not expose enough station structure to assign those items safely.
-
 ## Nutrition handling
 
-Nutrition data is parsed per dish from the Nutrition Facts panel embedded in the Michigan Dining page.
+The scraper first looks for Nutrition Facts already embedded in the item's nearby DOM. If that is not sufficient, it can fall back to interacting with the dish entry and reading the visible nutrition panel.
 
-Special case:
+Some Michigan Dining containers include multiple adjacent dishes, so the parser isolates the current dish's Nutrition Facts panel before parsing values. This prevents an adjacent dish's calories/macros from being assigned to the wrong menu item.
+
+Made-to-order Deli sandwiches are treated specially:
 
 ```json
 {
@@ -161,27 +229,47 @@ Special case:
 }
 ```
 
-A made-to-order sandwich does not have one meaningful fixed nutrition value because the result depends on the selected bread, protein, cheese, toppings, sauces, and portion sizes.
+A custom sandwich does not have a meaningful single fixed nutrition value because it depends on the selected bread, protein, cheese, toppings, sauces, and portions.
+
+## Station assignment
+
+The Michigan Dining page does not expose all eight Bursley stations in exactly the same DOM structure.
+
+The parser therefore uses:
+
+1. direct station containers whenever they are available;
+2. conservative positional inference for some sections;
+3. limited station-specific keyword inference for `Wild Fire` and `Two Oceans`;
+4. `Unresolved` instead of guessing when there is not enough evidence.
+
+`24 Carrots`, `Halal`, `Pizziti`, and `Deli` are generally available as explicit station containers. Some `Signature`, `Wild Fire`, `Two Oceans`, and `Finale` assignments rely on conservative fallbacks.
 
 ## Known limitations
 
-- **Dining-hall signage wins.** The website itself states that offerings are subject to change.
-- **Salad bar, fruit, beverages, and other self-serve staples are not guaranteed to appear in `menu.json`.** The file primarily reflects items exposed by the online menu.
-- **Made-to-order items may not have fixed Nutrition Facts.**
-- **Station inference is intentionally conservative.** Some dishes can remain `Unresolved` rather than being assigned incorrectly.
-- **Nutrition is approximate.** Values come from Michigan Dining and may differ from the food actually served.
-- This project is an unofficial personal data utility and is **not affiliated with or endorsed by the University of Michigan or Michigan Dining**.
+- **Dining-hall signage wins.** Online offerings can change.
+- **Salad bar, fruit, beverages, and other self-serve staples are not guaranteed to appear in `menu.json`.**
+- **Made-to-order items may not have fixed nutrition values.**
+- **Station assignment is intentionally conservative.** Some items can remain `Unresolved` rather than being assigned incorrectly.
+- **Nutrition values are approximate.** Michigan Dining notes that recipes, substitutions, product formulations, and actual portion size can change the values.
+- The scraper depends on the current Michigan Dining page/DOM and may require updates if the site changes.
+- This is an unofficial personal utility and is not affiliated with or endorsed by the University of Michigan or Michigan Dining.
 
-## Typical use cases
+## Data flow
 
-This repository is useful for things like:
-
-- Answering “What should I eat at Bursley tonight?” using the actual current menu
-- Comparing entrees by calories, protein, carbs, or fat
-- Building meal-planning or nutrition tools
-- Filtering dishes by dietary tags or allergens
-- Feeding a current Bursley menu into an AI assistant or personal automation
-
-## License / data ownership
-
-The repository contains a transformed snapshot of publicly presented Michigan Dining menu information. University of Michigan / Michigan Dining retain ownership of their underlying menu, branding, and nutrition information.
+```text
+Michigan Dining Bursley page
+        ↓
+Playwright + Chromium
+        ↓
+meal / dish extraction
+        ↓
+station classification
+        ↓
+Nutrition Facts + allergens
+        ↓
+menu.json
+        ↓
+sync_menu.sh
+        ↓
+Git commit + push
+```
