@@ -1,7 +1,7 @@
 {
   "source": "https://dining.umich.edu/menus-locations/dining-halls/bursley/",
   "title": "Bursley | M|Dining",
-  "captured_at": "2026-08-30T04:28:25.798243+08:00",
+  "captured_at": "2026-08-29T16:41:54.269057-04:00",
   "stations": [
     "Signature",
     "24 Carrots",
@@ -12,141 +12,1206 @@
     "Deli",
     "Finale"
   ],
-  "meals": {},
+  "meals": {
+    "Breakfast": {
+      "Unresolved": [
+        "Oatmeal",
+        "Brown Sugar",
+        "Hash Browns",
+        "Cajun Andouille Sausage",
+        "Scrambled Eggs",
+        "Deep Fried French Toast Sticks",
+        "Scrambled Tofu w/ Spinach",
+        "Blueberry Muffins",
+        "Chocolate Chocolate Chip Muffins",
+        "Cinnamon Sugar Donuts",
+        "Apple Cider"
+      ]
+    },
+    "Brunch": {
+      "Unresolved": [
+        "Oatmeal",
+        "Brown Sugar",
+        "Hash Browns",
+        "Cajun Andouille Sausage",
+        "Scrambled Eggs",
+        "Deep Fried French Toast Sticks",
+        "Scrambled Tofu w/ Spinach",
+        "Minnesota Wild Rice Soup",
+        "Oyster Crackers",
+        "Apple Cider",
+        "Chocolate Chunk Cookies",
+        "Oatmeal Raisin Cookies",
+        "Double Vanilla Cake",
+        "Cinnamon Coffee Cake",
+        "White Chocolate Raspberry Blondies"
+      ],
+      "24 Carrots": [
+        "Mushroom and Kale Ragout",
+        "Fresh Whipped Potatoes",
+        "Parsley"
+      ],
+      "Halal": [
+        "Lemon Parsley Rice",
+        "Charred Grape Tomatoes"
+      ],
+      "Pizziti": [
+        "Breakfast Pizza with Meat",
+        "Garlic Cheese Bread",
+        "Cheese Pizza",
+        "Pepperoni Pizza"
+      ],
+      "Deli": [
+        "Sandwiches Made to Order"
+      ]
+    },
+    "Dinner": {
+      "Unresolved": [
+        "Vegetable Rice Soup",
+        "Oyster Crackers",
+        "Piri-Piri Chicken",
+        "Jasmine Rice",
+        "Roasted Shaved Brussels Sprouts",
+        "Cilantro Chutney",
+        "Lemon Wedges",
+        "Beef and Mushroom Blended Burger",
+        "Beef & Mushroom Blend Burger w/ American",
+        "French Fries",
+        "Garlic Bread",
+        "Double Vanilla Cake",
+        "Peach Cobbler",
+        "Fresh Blueberry Cream Pie",
+        "Apple Cranberry Crisp"
+      ],
+      "24 Carrots": [
+        "Mushroom Nimono",
+        "Savory Baked Tofu",
+        "Miso Broth",
+        "Mushroom Ramen"
+      ],
+      "Halal": [
+        "Chili Roasted Potatoes",
+        "Corn with Bell Peppers",
+        "Spicy Garlic-Lime Sauce"
+      ],
+      "Pizziti": [
+        "Garlic Cheese Bread",
+        "Cheese Pizza",
+        "Pepperoni Pizza",
+        "Chicken Parmesan Pizza"
+      ],
+      "Deli": [
+        "Sandwiches Made to Order"
+      ]
+    }
+  },
   "_debug": {
-    "raw_rows": 5,
-    "headers_found": [
+    "counts": {
+      "anchors_total": 342,
+      "stations": 8,
+      "dishes": 63
+    },
+    "stations": [
       {
-        "type": "meal",
-        "text": "Breakfast",
-        "tag": "SPAN",
-        "cls": "calhours-title"
+        "meal": "Brunch",
+        "station": "24 Carrots",
+        "direct_container_found": true,
+        "depth": 1,
+        "direct_dish_count": 3
       },
       {
-        "type": "meal",
-        "text": "Brunch",
-        "tag": "SPAN",
-        "cls": "calhours-title"
+        "meal": "Brunch",
+        "station": "Halal",
+        "direct_container_found": true,
+        "depth": 1,
+        "direct_dish_count": 2
       },
       {
-        "type": "meal",
-        "text": "Dinner",
-        "tag": "SPAN",
-        "cls": "calhours-title"
+        "meal": "Brunch",
+        "station": "Pizziti",
+        "direct_container_found": true,
+        "depth": 1,
+        "direct_dish_count": 4
       },
       {
-        "type": "meal",
-        "text": "Breakfast",
-        "tag": "A",
-        "cls": ""
+        "meal": "Brunch",
+        "station": "Deli",
+        "direct_container_found": true,
+        "depth": 1,
+        "direct_dish_count": 1
       },
       {
-        "type": "meal",
-        "text": "Brunch",
-        "tag": "A",
-        "cls": ""
+        "meal": "Dinner",
+        "station": "24 Carrots",
+        "direct_container_found": true,
+        "depth": 1,
+        "direct_dish_count": 4
       },
       {
-        "type": "station",
-        "text": "24 Carrots",
-        "tag": "H4",
-        "cls": ""
+        "meal": "Dinner",
+        "station": "Halal",
+        "direct_container_found": true,
+        "depth": 1,
+        "direct_dish_count": 3
       },
       {
-        "type": "station",
-        "text": "Halal",
-        "tag": "H4",
-        "cls": ""
+        "meal": "Dinner",
+        "station": "Pizziti",
+        "direct_container_found": true,
+        "depth": 1,
+        "direct_dish_count": 4
       },
       {
-        "type": "station",
-        "text": "Halal",
-        "tag": "LI",
-        "cls": "halal"
+        "meal": "Dinner",
+        "station": "Deli",
+        "direct_container_found": true,
+        "depth": 1,
+        "direct_dish_count": 1
+      }
+    ],
+    "assignments": [
+      {
+        "meal": "Breakfast",
+        "dish": "Oatmeal",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": []
       },
       {
-        "type": "station",
-        "text": "Pizziti",
-        "tag": "H4",
-        "cls": ""
+        "meal": "Breakfast",
+        "dish": "Brown Sugar",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": []
       },
       {
-        "type": "station",
-        "text": "Halal",
-        "tag": "LI",
-        "cls": "halal"
+        "meal": "Breakfast",
+        "dish": "Hash Browns",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": []
       },
       {
-        "type": "station",
-        "text": "Deli",
-        "tag": "H4",
-        "cls": ""
+        "meal": "Breakfast",
+        "dish": "Cajun Andouille Sausage",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": []
       },
       {
-        "type": "meal",
-        "text": "Dinner",
-        "tag": "A",
-        "cls": ""
+        "meal": "Breakfast",
+        "dish": "Scrambled Eggs",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": []
       },
       {
-        "type": "station",
-        "text": "Halal",
-        "tag": "LI",
-        "cls": "halal"
+        "meal": "Breakfast",
+        "dish": "Deep Fried French Toast Sticks",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": []
       },
       {
-        "type": "station",
-        "text": "Halal",
-        "tag": "LI",
-        "cls": "halal"
+        "meal": "Breakfast",
+        "dish": "Scrambled Tofu w/ Spinach",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": []
       },
       {
-        "type": "station",
-        "text": "24 Carrots",
-        "tag": "H4",
-        "cls": ""
+        "meal": "Breakfast",
+        "dish": "Blueberry Muffins",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": []
       },
       {
-        "type": "station",
-        "text": "Halal",
-        "tag": "H4",
-        "cls": ""
+        "meal": "Breakfast",
+        "dish": "Chocolate Chocolate Chip Muffins",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": []
       },
       {
-        "type": "station",
-        "text": "Halal",
-        "tag": "LI",
-        "cls": "halal"
+        "meal": "Breakfast",
+        "dish": "Cinnamon Sugar Donuts",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": []
       },
       {
-        "type": "station",
-        "text": "Pizziti",
-        "tag": "H4",
-        "cls": ""
+        "meal": "Breakfast",
+        "dish": "Apple Cider",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": []
       },
       {
-        "type": "station",
-        "text": "Halal",
-        "tag": "LI",
-        "cls": "halal"
+        "meal": "Brunch",
+        "dish": "Oatmeal",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
       },
       {
-        "type": "station",
-        "text": "Halal",
-        "tag": "LI",
-        "cls": "halal"
+        "meal": "Brunch",
+        "dish": "Brown Sugar",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
       },
       {
-        "type": "station",
-        "text": "Halal",
-        "tag": "LI",
-        "cls": "halal"
+        "meal": "Brunch",
+        "dish": "Hash Browns",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
       },
       {
-        "type": "station",
-        "text": "Deli",
-        "tag": "H4",
-        "cls": ""
+        "meal": "Brunch",
+        "dish": "Cajun Andouille Sausage",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Scrambled Eggs",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Deep Fried French Toast Sticks",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Scrambled Tofu w/ Spinach",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Minnesota Wild Rice Soup",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Oyster Crackers",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Mushroom and Kale Ragout",
+        "station": "24 Carrots",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Fresh Whipped Potatoes",
+        "station": "24 Carrots",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Parsley",
+        "station": "24 Carrots",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Lemon Parsley Rice",
+        "station": "Halal",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Charred Grape Tomatoes",
+        "station": "Halal",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Breakfast Pizza with Meat",
+        "station": "Pizziti",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Garlic Cheese Bread",
+        "station": "Pizziti",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Cheese Pizza",
+        "station": "Pizziti",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Pepperoni Pizza",
+        "station": "Pizziti",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Sandwiches Made to Order",
+        "station": "Deli",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Apple Cider",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Chocolate Chunk Cookies",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Oatmeal Raisin Cookies",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Double Vanilla Cake",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Brunch",
+        "dish": "Cinnamon Coffee Cake",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Brunch",
+        "dish": "White Chocolate Raspberry Blondies",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Vegetable Rice Soup",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Oyster Crackers",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Piri-Piri Chicken",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Jasmine Rice",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Roasted Shaved Brussels Sprouts",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Cilantro Chutney",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Lemon Wedges",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Mushroom Nimono",
+        "station": "24 Carrots",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Savory Baked Tofu",
+        "station": "24 Carrots",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Miso Broth",
+        "station": "24 Carrots",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Mushroom Ramen",
+        "station": "24 Carrots",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Chili Roasted Potatoes",
+        "station": "Halal",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Corn with Bell Peppers",
+        "station": "Halal",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Spicy Garlic-Lime Sauce",
+        "station": "Halal",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Garlic Cheese Bread",
+        "station": "Pizziti",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Cheese Pizza",
+        "station": "Pizziti",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Pepperoni Pizza",
+        "station": "Pizziti",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Chicken Parmesan Pizza",
+        "station": "Pizziti",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Beef and Mushroom Blended Burger",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Beef & Mushroom Blend Burger w/ American",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Dinner",
+        "dish": "French Fries",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Garlic Bread",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Sandwiches Made to Order",
+        "station": "Deli",
+        "method": "container",
+        "nearest": []
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Double Vanilla Cake",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Peach Cobbler",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Fresh Blueberry Cream Pie",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      },
+      {
+        "meal": "Dinner",
+        "dish": "Apple Cranberry Crisp",
+        "station": "Unresolved",
+        "method": "unresolved",
+        "nearest": [
+          {
+            "station": "24 Carrots",
+            "distance": 6
+          },
+          {
+            "station": "Halal",
+            "distance": 6
+          },
+          {
+            "station": "Pizziti",
+            "distance": 6
+          }
+        ]
+      }
+    ],
+    "dinner_sample": [
+      {
+        "inner_text": "Dinner",
+        "parsed_dish": "Dinner",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": false
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": false
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://mobile.its.umich.edu/michigan/home",
+        "is_dish": false
+      },
+      {
+        "inner_text": "Vegetable Rice Soup Gluten Free Nutrient Dense Medium Vegan Carbon Footprint Low",
+        "parsed_dish": "Vegetable Rice Soup",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": true
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": false
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://mobile.its.umich.edu/michigan/home",
+        "is_dish": false
+      },
+      {
+        "inner_text": "close",
+        "parsed_dish": "close",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/",
+        "is_dish": false
+      },
+      {
+        "inner_text": "Oyster Crackers Nutrient Dense Medium Vegan Carbon Footprint Low",
+        "parsed_dish": "Oyster Crackers",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": true
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": false
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://mobile.its.umich.edu/michigan/home",
+        "is_dish": false
+      },
+      {
+        "inner_text": "close",
+        "parsed_dish": "close",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/",
+        "is_dish": false
+      },
+      {
+        "inner_text": "Piri-Piri Chicken Gluten Free Halal Nutrient Dense High Carbon Footprint Medium",
+        "parsed_dish": "Piri-Piri Chicken",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": true
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": false
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://mobile.its.umich.edu/michigan/home",
+        "is_dish": false
+      },
+      {
+        "inner_text": "close",
+        "parsed_dish": "close",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/",
+        "is_dish": false
+      },
+      {
+        "inner_text": "Jasmine Rice Gluten Free Nutrient Dense Medium Vegan Carbon Footprint Low",
+        "parsed_dish": "Jasmine Rice",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": true
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": false
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://mobile.its.umich.edu/michigan/home",
+        "is_dish": false
+      },
+      {
+        "inner_text": "close",
+        "parsed_dish": "close",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/",
+        "is_dish": false
+      },
+      {
+        "inner_text": "Roasted Shaved Brussels Sprouts Gluten Free Nutrient Dense High Vegan Carbon Footprint Low",
+        "parsed_dish": "Roasted Shaved Brussels Sprouts",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": true
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": false
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://mobile.its.umich.edu/michigan/home",
+        "is_dish": false
+      },
+      {
+        "inner_text": "close",
+        "parsed_dish": "close",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/",
+        "is_dish": false
+      },
+      {
+        "inner_text": "Cilantro Chutney Gluten Free Nutrient Dense High Vegan Carbon Footprint Low",
+        "parsed_dish": "Cilantro Chutney",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": true
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": false
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://mobile.its.umich.edu/michigan/home",
+        "is_dish": false
+      },
+      {
+        "inner_text": "close",
+        "parsed_dish": "close",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/",
+        "is_dish": false
+      },
+      {
+        "inner_text": "Lemon Wedges Gluten Free Nutrient Dense High Vegan Carbon Footprint Low",
+        "parsed_dish": "Lemon Wedges",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": true
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": false
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://mobile.its.umich.edu/michigan/home",
+        "is_dish": false
+      },
+      {
+        "inner_text": "close",
+        "parsed_dish": "close",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/",
+        "is_dish": false
+      },
+      {
+        "inner_text": "Halal Turkey Chipotle on Ciabatta Halal Nutrient Dense Low Carbon Footprint Medium",
+        "parsed_dish": "",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": false
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/#",
+        "is_dish": false
+      },
+      {
+        "inner_text": "",
+        "parsed_dish": "",
+        "href": "https://mobile.its.umich.edu/michigan/home",
+        "is_dish": false
+      },
+      {
+        "inner_text": "close",
+        "parsed_dish": "close",
+        "href": "https://dining.umich.edu/menus-locations/dining-halls/bursley/",
+        "is_dish": false
       }
     ]
   }
