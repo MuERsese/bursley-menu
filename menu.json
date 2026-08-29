@@ -1,5 +1,153 @@
 {
   "source": "https://dining.umich.edu/menus-locations/dining-halls/bursley/",
-  "captured_at": "2026-08-30T04:10:03.511025+08:00",
-  "responses": []
+  "title": "Bursley | M|Dining",
+  "captured_at": "2026-08-30T04:28:25.798243+08:00",
+  "stations": [
+    "Signature",
+    "24 Carrots",
+    "Halal",
+    "Pizziti",
+    "Wild Fire",
+    "Two Oceans",
+    "Deli",
+    "Finale"
+  ],
+  "meals": {},
+  "_debug": {
+    "raw_rows": 5,
+    "headers_found": [
+      {
+        "type": "meal",
+        "text": "Breakfast",
+        "tag": "SPAN",
+        "cls": "calhours-title"
+      },
+      {
+        "type": "meal",
+        "text": "Brunch",
+        "tag": "SPAN",
+        "cls": "calhours-title"
+      },
+      {
+        "type": "meal",
+        "text": "Dinner",
+        "tag": "SPAN",
+        "cls": "calhours-title"
+      },
+      {
+        "type": "meal",
+        "text": "Breakfast",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "type": "meal",
+        "text": "Brunch",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "type": "station",
+        "text": "24 Carrots",
+        "tag": "H4",
+        "cls": ""
+      },
+      {
+        "type": "station",
+        "text": "Halal",
+        "tag": "H4",
+        "cls": ""
+      },
+      {
+        "type": "station",
+        "text": "Halal",
+        "tag": "LI",
+        "cls": "halal"
+      },
+      {
+        "type": "station",
+        "text": "Pizziti",
+        "tag": "H4",
+        "cls": ""
+      },
+      {
+        "type": "station",
+        "text": "Halal",
+        "tag": "LI",
+        "cls": "halal"
+      },
+      {
+        "type": "station",
+        "text": "Deli",
+        "tag": "H4",
+        "cls": ""
+      },
+      {
+        "type": "meal",
+        "text": "Dinner",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "type": "station",
+        "text": "Halal",
+        "tag": "LI",
+        "cls": "halal"
+      },
+      {
+        "type": "station",
+        "text": "Halal",
+        "tag": "LI",
+        "cls": "halal"
+      },
+      {
+        "type": "station",
+        "text": "24 Carrots",
+        "tag": "H4",
+        "cls": ""
+      },
+      {
+        "type": "station",
+        "text": "Halal",
+        "tag": "H4",
+        "cls": ""
+      },
+      {
+        "type": "station",
+        "text": "Halal",
+        "tag": "LI",
+        "cls": "halal"
+      },
+      {
+        "type": "station",
+        "text": "Pizziti",
+        "tag": "H4",
+        "cls": ""
+      },
+      {
+        "type": "station",
+        "text": "Halal",
+        "tag": "LI",
+        "cls": "halal"
+      },
+      {
+        "type": "station",
+        "text": "Halal",
+        "tag": "LI",
+        "cls": "halal"
+      },
+      {
+        "type": "station",
+        "text": "Halal",
+        "tag": "LI",
+        "cls": "halal"
+      },
+      {
+        "type": "station",
+        "text": "Deli",
+        "tag": "H4",
+        "cls": ""
+      }
+    ]
+  }
 }
